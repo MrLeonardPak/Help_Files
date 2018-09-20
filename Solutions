@@ -1,0 +1,26 @@
+1) SW4STM32
+	Eror: timed out while waiting for target halted - при запуске прошивки
+Лечение:	Run->Debug Configuration
+		In the tab “Debugger”, set the radio button of “Configuration Script” to “Auto Generation” (this works in my case), and press the button “Show Generator Options...”. There, under “Mode Setup” change the “Reset Mode” entry from “Connect Under Reset” (in my case) to “Software System Reset”.
+
+2) SW4STM32
+	 ST-Link сервер не установлен
+Лечение:	Установить ~/Ac6/SystemWorkbench/stlinkserver/st-stlink-server-1.0.12-1-linux-amd64.deb
+
+3) SW4STM32
+	Обновление прошивки ST-Link
+Лечение:	Качаем с сайта http://www.st.com/ обновлялку прошивки. Нужен файл (на момент написания статьи) en.stsw-link007.zip. Из архива вынимаем всю папку. В терминале заходим в папку: stsw-link007/AllPlatforms/StlinkRulesFilesForLinux и копируем файлы как сказано в инструкции:
+1
+	
+sudo cp *.* /etc/udev/rules.d
+
+После чего запускаем STLinkUpgrade.jar:
+1
+	
+sudo java -jar ./STLinkUpgrade.jar
+
+(Если java не установлена, ругнется и подскажет какой пакет поставить). После запуска STLinkUpgrade.jar обновляем прошивку программатору (программатор должен быть воткнут в USB компа )
+
+4) SW4STM32
+	Настройка автозаполнения
+Лечение:	В Window Menu > Preferences  ищем Content assist	
