@@ -24,3 +24,7 @@ sudo java -jar ./STLinkUpgrade.jar
 4) SW4STM32
 	Настройка автозаполнения
 Лечение:	В Window Menu > Preferences  ищем Content assist	
+
+5) Python
+	Не открывает COM-порт, просит sudo
+		Надо добавить пользователя в группу dailout - это полный доступ к серийному порту. В терминал: sudo usermos -a -G dailout [имя пользователя]. Затем перегрузить сессию.
